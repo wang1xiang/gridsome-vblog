@@ -68,3 +68,9 @@ This is the project you get when you run `gridsome create new-project`.
   同开源项目页面
 
 - README.md页面
+
+##### 项目部署
+
+- `yarn build`打包项目
+- 通过远程工具将`dist`和`node_modules`目录推送到远程
+- 使用pm2启动项目 `pm2 start -- npm run develop --name gridsome-blog`
