@@ -44,7 +44,7 @@
         >GitHub主页</a
       >
       <a
-        href="https://github.com/GitHub-Laziji/vblog"
+        href="https://github.com/wang1xiang/gridsome-vblog"
         class="btn"
         target="_blank"
         v-if="!defaultStyle.mini"
@@ -82,7 +82,7 @@
               </el-submenu>
             </el-menu>
           </el-col>
-          <el-col :span="6" style="text-align: right;">
+          <el-col :span="12" style="text-align: right;">
             <div style="font-size: 20px;color:#606266;margin-top: 5px">
               <b>{{ defaultStyle.githubUsername }}</b>
             </div>

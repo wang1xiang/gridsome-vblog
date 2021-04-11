@@ -7,6 +7,7 @@
 const config = require('./src/config')
 const request = require('./src/utils/request')
 const moment = require('moment')
+const { Base64 } = require('js-base64')
 const MarkdownIt = require('markdown-it')
 
 module.exports = function(api) {
@@ -127,18 +128,22 @@ module.exports = function(api) {
 
     let content = ''
     try {
-      const res = await request(
+      const { data } = await request(
         `/repos/${config.USERNAME}/gridsome-vblog/contents/README.md`
       )
-
       const md = new MarkdownIt()
-      content = md.render(Base64.decode(res.data.content))
+      console.log(data.content)
+      console.log(1)
+      console.log(Base64.decode(data.content))
+      console.log(2)
+      console.log(md.render(Base64.decode(data.content)))
+      content = md.render(Base64.decode(data.content))
+      collection.addNode({
+        content,
+      })
     } catch (e) {
       content = ''
     }
-    collection.addNode({
-      content,
-    })
   })
   api.createPages(({ createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/

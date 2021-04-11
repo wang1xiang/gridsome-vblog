@@ -1,5 +1,5 @@
 export default {
-  githubUsername: 'GitHub-wang1xiang',
+  githubUsername: 'wang1xiang',
   blogTitle: 'wang1xiang',
   blogDescribe: '欢迎来到王翔的个人博客。',
   htmlTitle: '王翔的博客',
