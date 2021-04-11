@@ -132,11 +132,6 @@ module.exports = function(api) {
         `/repos/${config.USERNAME}/gridsome-vblog/contents/README.md`
       )
       const md = new MarkdownIt()
-      console.log(data.content)
-      console.log(1)
-      console.log(Base64.decode(data.content))
-      console.log(2)
-      console.log(md.render(Base64.decode(data.content)))
       content = md.render(Base64.decode(data.content))
       collection.addNode({
         content,

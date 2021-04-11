@@ -74,3 +74,6 @@ This is the project you get when you run `gridsome create new-project`.
 - `yarn build`打包项目
 - 通过远程工具将`dist`和`node_modules`目录推送到远程
 - 使用pm2启动项目 `pm2 start -- npm run develop --name gridsome-blog`
+
+##### 使用GitHub Action实现自动部署
+
