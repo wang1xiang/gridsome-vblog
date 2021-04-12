@@ -18,14 +18,14 @@ jobs:
       - run: npm install
       - run: npm run build
       # 将.nuxt static nuxt.config.js package.json package-lock.json pm2.config.json解压到release.tgz
-      - run: tar -zcvf release.tgz dist/ package.json package-lock.json pm2.config.json node_modules/
+      - run: tar -zcvf release.tgz dist/
 
       # 发布 Release
       - name: Create Release
         id: create_release
         uses: actions/create-release@master
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
@@ -33,11 +33,12 @@ jobs:
           prerelease: false
 
       # 上传构建结果到 Release
+      # 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
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@master
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./release.tgz
@@ -56,5 +57,3 @@ jobs:
             cd /usr/local/gridsome-blog
             wget https://github.com/wang1xiang/gridsome-vblog/releases/latest/download/release.tgz -O release.tgz
             tar zxvf release.tgz
-            npm install --production
-            pm2 reload pm2.config.json
