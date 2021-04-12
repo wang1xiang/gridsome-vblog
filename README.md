@@ -13,6 +13,10 @@ This is the project you get when you run `gridsome create new-project`.
 3. `gridsome develop` to start a local dev server at `http://localhost:8080`
 4. Happy coding 🎉🙌
 
+##### 项目访问地址
+
+http://106.75.190.29:8080/gridsome-blog/
+
 ##### 项目构建过程
 
 - 首页静态内容相关
