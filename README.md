@@ -55,25 +55,28 @@ This is the project you get when you run `gridsome create new-project`.
       },
     ```
 
-    
-
-- 开源项目页面
+* 开源项目页面
 
   - 在 gridsome.server.js 中新增对 repo 的请求，并添加到 Project 集合
   - 创建 projects.vue，将对应代码复制，通过 allProject 将数据渲染到页面
   - 创建 project/[name].vue 动态路由用于 projects 详情跳转，并在 created 中获取指定项目 README.md 渲染
 
-- 社交圈页面
+* 社交圈页面
 
   同开源项目页面
 
-- README.md页面
+* README.md 页面
 
 ##### 项目部署
 
 - `yarn build`打包项目
 - 通过远程工具将`dist`和`node_modules`目录推送到远程
-- 使用pm2启动项目 `pm2 start -- npm run develop --name gridsome-blog`
+- 使用 pm2 启动项目 `pm2 start -- npm run develop --name gridsome-blog`
 
-##### 使用GitHub Action实现自动部署
+##### 使用 GitHub Action 实现自动部署
 
+自动部署出错，未查出问题，以后在研究
+
+```bash
+Error: Bad credentials
+```
